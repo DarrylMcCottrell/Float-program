@@ -7,7 +7,7 @@
 
 int main()
 {
-
+	double div;
 	int x = 0, y = 1, n;
 	double hyp, squareroot;
 	double a,b,z;
@@ -15,30 +15,22 @@ int main()
 
 	 printf("Enter the number of trials : ");
    	scanf("%d",&x);
-	 srand(time(0));
+	 srand(time(NULL));
    count=0;
    for (int i=0; i< x; i++) {
-      a = (double)rand()/RAND_MAX;
-      b = (double)rand()/RAND_MAX;
-      z = x*x+y*y;
+      a = (float)rand()/RAND_MAX;
+      b = (float)rand()/RAND_MAX;
+      z = x*x + y*y;
+	  hyp = sqrt(z);
+	  
+	  
       if (z<=1) count++;
       }
+	div = (double) hyp/x*4;
    
    printf("Executing: %d\n",x);
-
+   printf("Hits: %g\n", hyp);
+   printf("Approximation: %f\n", div);
 	
-
-	for (int i = 0; i < 1; i++){
-		//pythagoras theorem
-		hyp = x*x + y*y;
-		squareroot = sqrt(hyp);
-		srand(time(NULL));
-		printf("Hits:");
-		float random = 0;
-		for( int i = 0; i < 1; ++i){
-		random = (float) rand()/RAND_MAX;
-		printf("%f\n", hyp);
-	}
-	}
 	return 0;
 }
