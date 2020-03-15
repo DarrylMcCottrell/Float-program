@@ -8,23 +8,28 @@
 int main()
 {
 	double div;
-	int x = 0, y = 1, n;
-	double hyp, squareroot;
+	int x = 0, y = 1;
+	double hyp;
 	double a,b,z;
-	int count;
-
-	 printf("Enter the number of trials : ");
-   	scanf("%d",&x);
-	 srand(time(NULL));
-   count=0;
-   for (int i=0; i< x; i++) {
-      a = (float)rand()/RAND_MAX;
-      b = (float)rand()/RAND_MAX;
+	
+	
+	 printf("Enter the number of trials: ");
+   	 scanf("%d",&x);
+	 
+   	for (int i=0; i < 0; i++) {
+		srand(time(NULL));
+      a = (double)rand()/RAND_MAX;
+      b = (double)rand()/RAND_MAX;
       z = x*x + y*y;
 	  hyp = sqrt(z);
 	  
 	  
-      if (z<=1) count++;
+      if (hyp < 1){
+		printf("Hits: %g\n", hyp);
+	  }
+	 else if(hyp >= 1){
+		 continue;
+	 }
       }
 	div = (double) hyp/x*4;
    
